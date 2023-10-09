@@ -5,7 +5,6 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from login import settings
-from django.core.mail import send_mail
 
 # Create your views here.
 def home(request):
@@ -40,13 +39,6 @@ def signup(request):
         myUser.save()
 
         messages.success(request, "Account created successfully")
-
-        subject = "welcome to interior design 2D-3D"
-        message = "Hello "+ myUser.first_name +"!! \n" +"Thank you for signing up!!\n"+"please confirm email address to activate account."
-        from_email = settings.EMAIL_HOST_USER
-        to_list = {myUser.email}
-        send_mail(subject, message, from_email, to_list, fail_silently = True)
-
 
         return redirect('signin')
 
