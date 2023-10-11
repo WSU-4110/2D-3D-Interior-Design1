@@ -1,5 +1,4 @@
 #ignore files of these types
-manage.py
 
 #ignore all files in these folders
 .vscode/
