@@ -1,3 +1,7 @@
+Date: 10/26/2023
+Topic: Progress
+We disucussed the progress we made after deciding to swtich. We have decided to use blender to run the functions in the web page. We have completed redoing our login page (front end) and the homepage. We are going to use docker as a server because it will allow us to use blender in the web page without having the user install it. We are planning to get the docker server running within the week, and the backend of the login page done. Th about page of our web app is still in progress, and we are going to work on the contact page. 
+
 Date: 10/19/23
 Topic: Retrospective 
 Discussion: We talked about what to do in the next sprint and if we should change our current plan. We have decided to figure out what software we are going to use to make 
