@@ -1,0 +1,121 @@
+<DOCTYPE html>
+    <html>
+    <head>
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .center {
+                margin: auto;
+                width: 60%;
+                border: 3px solid Orange;
+                padding: 10px;
+                font-family: Arial;
+                color: white;
+            }
+
+            nav {
+                width: 100%;
+                background: black;
+                overflow: auto;
+            }
+
+            ul {
+                padding: 0;
+                margin: 0 0 0 150 px;
+                list-style: none;
+            }
+
+            li {
+                float: left;
+            }
+
+            nav a {
+                width: 100px;
+                display: block;
+                padding: 20px 15px;
+                text-decoration: none;
+                font-family: Arial;
+                color: white;
+                text-align: center;
+            }
+
+            .fa {
+                padding: 20px;
+                font-size: 30px;
+                width: 50px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+            }
+
+                .fa:hover {
+                    opacity: 0.7;
+                }
+
+            .fa-facebook {
+                background: #3B5998;
+                color: Black;
+            }
+
+            .fa-instagram {
+                background: #125688;
+                color: white;
+            }
+
+            .fa-yahoo {
+                background: #430297;
+                color: white;
+            }
+
+            .fa-pinterest {
+                background: #cb2027;
+                color: white;
+            }
+        </style>
+    </head>
+    <body style="background-color:black;">
+
+
+            <div class="center">
+                
+                        <h1>Contact Us</h1>
+                        <p>Questions/Concerns? Reach out to us! </p><br><br>
+
+
+                        <form action="#" method="post">
+                            <label for="first_name">Name:</label>
+                            <input type="text" id="name" name="Name" required <br>
+
+                            <label for="last_name">Email:</label>
+                            <input type="text" id="email" name="Email" required><br><br>
+
+                            <label for="message">Message:</label><br>
+                            <textarea id="message" name="message" rows="6" cols="60" required></textarea><br><br>
+
+                            <input type="submit" value="Submit">
+                        </form>
+
+                        <div id="messageBox" class="modal">
+                            <div class="modal-content">
+                                <span class="close" id="closeMessageBox">&times;</span>
+                                <p>Your message has been received. We will get back to you soon.</p>
+                            </div>
+                        </div>
+
+
+
+
+                        <center>
+                            <h2>Connect with us on socials!</h2>
+                            <a href="https://www.facebook.com/groups/227901285513929" class="fa fa-facebook"></a>
+                            <a href="https://www.instagram.com/cg.visualization/" class="fa fa-instagram"></a>
+                            <a href="https://www.pinterest.com/maryjane_ivanovic/" class="fa fa-pinterest"></a>
+                            <a href="mailto:2D3DInterior.com" class="fa fa-yahoo"></a>
+                        </center>
+
+
+                    </div>
+                
+    </body>
+</html>
