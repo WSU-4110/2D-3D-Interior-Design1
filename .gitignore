@@ -1,5 +1,0 @@
-#ignore files of these types
-
-#ignore all files in these folders
-.vscode/
-.venv/
