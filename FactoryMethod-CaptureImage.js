@@ -1,12 +1,28 @@
+// adding the factory method for my design pattern 
+class KonvaFactory {
+    createStage(options) {
+        return new Konva.Stage(options);
+    }
+
+    createLayer() {
+        return new Konva.Layer();
+    }
+
+    createLine(options) {
+        return new Konva.Line(options);
+    }
+}
+const konvaFactory = new KonvaFactory();
+
 // Initialization
-const stage = new Konva.Stage({
+const stage = konvaFactory.createStage({
     container: 'container',
     width: window.innerWidth,
     height: window.innerHeight,
 });
 
 // Adds the grid layer
-const gridLayer = new Konva.Layer();
+const gridLayer = konvaFactory.createLayer();
 stage.add(gridLayer);
 
 // Grid properties
@@ -38,7 +54,7 @@ for (let y = gridSize; y < stage.height(); y += gridSize) {
 gridLayer.batchDraw();
 
 // Setting up the drawing layer
-const layer = new Konva.Layer();
+const layer = konvaFactory.createLayer();
 stage.add(layer);
 
 let isDrawing = false;
