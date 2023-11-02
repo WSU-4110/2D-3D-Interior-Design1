@@ -1,24 +1,4 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Drawing Capture</title>
-</head>
-<body>
-    <button id="captureDrawing">Capture Drawing</button>
-    <button id="erase">Erase</button>
-    
-    <input type="color" id="colorPicker" value="#000000"> <!-- Color picker input -->
-
-    <!-- Konva container for drawing -->
-    <div id="container"></div>
-    
-    <img id="captured-image" src="" alt="Captured Drawing">
-  
-    <script src="https://cdn.rawgit.com/konvajs/konva/2.6.0/konva.min.js"></script>
-    <script src="FactoryMethod-CaptureImage.js"></script> <!-- Include the JavaScript file -->
-</body>
-</html>
 // adding the factory method for my design pattern 
 class KonvaFactory {
     createStage(options) {
