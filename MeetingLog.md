@@ -1,6 +1,6 @@
 Date: 11/2/23
 Topic: Presentation Plan and Progress Discussion
-Discussed what we wanted to have done by sprint two, assigned duties for before the presentation, and discussed our progress.
+Discussed what we wanted to have done by sprint two, assigned duties for before the presentation, and discussed our progress. For sprint 2 we want full integration, a working login system, and the drawing app integrated even if not fully functional.
 
 Date: 10/26/2023
 Topic: Progress
