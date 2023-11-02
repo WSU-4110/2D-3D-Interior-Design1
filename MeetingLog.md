@@ -1,6 +1,6 @@
 Date: 11/2/23
 Topic: Presentation Plan and Progress Discussion
-
+Discussed what we wanted to have done by sprint two, assigned duties for before the presentation, and discussed our progress.
 
 Date: 10/26/2023
 Topic: Progress
