@@ -75,14 +75,14 @@
             display: none;
         }
 
-        .bed-images {
+        .furniture-images {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
         }
 
-        .bed-image {
+        .furniture-image {
             width: 150px;
             height: 150px;
             background-color: #ccc;
@@ -91,7 +91,7 @@
             cursor: pointer;
         }
 
-        .bed-image:hover {
+        .furniture-image:hover {
             border: 2px solid #ff9900;
         }
     </style>
@@ -140,10 +140,10 @@
             imageBox.style.display = 'block';
 
             // Create a box of bed images
-            var bedImages = createHTMLElement('div', 'bed-images');
+            var bedImages = createHTMLElement('div', 'furniture-images');
 
             for (var i = 1; i <= 4; i++) {
-                var bedImage = createHTMLElement('div', 'bed-image');
+                var bedImage = createHTMLElement('div', 'furniture-image');
                 bedImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
 
                 // Add a click event to the bed image
