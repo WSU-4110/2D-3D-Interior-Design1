@@ -46,14 +46,14 @@
             display: none;
             position: absolute;
             top: 0;
-            left: 100%; /* Position to the right of the parent item */
+            left: 100%; 
             background-color: #333;
             padding: 10px;
         }
 
         .arrow {
-            transform: rotate(90deg); /* Rotate the arrow 90 degrees for right-pointing */
-            transition: transform 0.3s; /* Add a smooth transition */
+            transform: rotate(90deg); 
+            transition: transform 0.3s; 
         }
 
         .sub-menu.active {
@@ -61,7 +61,7 @@
         }
 
         .sub-menu.active .arrow {
-            transform: rotate(0); /* Reset rotation when active */
+            transform: rotate(0); 
         }
 
         .content {
@@ -104,9 +104,9 @@
                 <a href="#" onclick="toggleSubMenu()">Furniture <span class="arrow">&#9654;</span></a>
                 <ul class="sub-menu" id="sub-menu">
                     <li><a href="#" onclick="showImages('bed')">Bed</a></li>
-                    <li><a href="#" onclick="hideImages()">Couch</a></li>
-                    <li><a href="#" onclick="hideImages()">Table</a></li>
-                    <li><a href="#" onclick="hideImages()">Wardrobe</a></li>
+                    <li><a href="#" onclick="showImages2('couch')">Couch</a></li>
+                    <li><a href="#" onclick="showImages3('table')">Table</a></li>
+                    <li><a href="#" onclick="showImages4('wardrobe')">Wardrobe</a></li>
                 </ul>
             </li>
             <li><a href="#">Paint</a></li>
@@ -116,11 +116,11 @@
     </div>
     <div class="content">
         <div id="image-box" class="image-box">
-            <!-- Bed images will appear here when "Bed" is clicked -->
+           
         </div>
     </div>
     <script>
-        // Factory function for creating elements
+       
         function createHTMLElement(tagName, className) {
             var element = document.createElement(tagName);
             if (className) {
@@ -154,8 +154,71 @@
                 bedImages.appendChild(bedImage);
             }
 
-            imageBox.innerHTML = ''; // Clear existing content
+            imageBox.innerHTML = ''; 
             imageBox.appendChild(bedImages);
+        }
+
+         function showImages2(furnitureType) {
+            var imageBox = document.getElementById('image-box');
+            imageBox.style.display = 'block';
+
+            var couchImages = createHTMLElement('div', 'furniture-images'); 
+
+            for (var i = 1; i <= 4; i++) {
+                var couchImage = createHTMLElement('div', 'furniture-image'); 
+                couchImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
+                
+                couchImage.onclick = function() {
+                    alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
+                };
+
+                couchImages.appendChild(couchImage);
+            }
+
+            imageBox.innerHTML = ''; 
+            imageBox.appendChild(couchImages);
+    }
+
+        function showImages3(furnitureType) {
+            var imageBox = document.getElementById('image-box');
+            imageBox.style.display = 'block';
+
+            var tableImages = createHTMLElement('div', 'furniture-images'); 
+
+            for (var i = 1; i <= 4; i++) {
+                var tableImage = createHTMLElement('div', 'furniture-image'); 
+                tableImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
+
+                tableImage.onclick = function() {
+                    alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
+                };
+
+                tableImages.appendChild(tableImage);
+            }
+
+            imageBox.innerHTML = ''; 
+            imageBox.appendChild(tableImages);
+        }
+
+                function showImages4(furnitureType) {
+            var imageBox = document.getElementById('image-box');
+            imageBox.style.display = 'block';
+
+            var wardrobeImages = createHTMLElement('div', 'furniture-images'); 
+
+            for (var i = 1; i <= 4; i++) {
+                var wardrobeImage = createHTMLElement('div', 'furniture-image'); 
+                wardrobeImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
+
+                wardrobeImage.onclick = function() {
+                    alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
+                };
+
+                wardrobeImages.appendChild(wardrobeImage);
+            }
+
+            imageBox.innerHTML = ''; 
+            imageBox.appendChild(wardrobeImages);
         }
 
         function hideImages() {
