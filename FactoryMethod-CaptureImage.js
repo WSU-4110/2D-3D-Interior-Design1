@@ -1,3 +1,4 @@
+
 // adding the factory method for my design pattern 
 class KonvaFactory {
     createStage(options) {
@@ -59,6 +60,9 @@ stage.add(layer);
 
 let isDrawing = false;
 let isErasing = false;
+let isStraight = false;
+let startPoint = null; //var for the start of a line
+//let line = null; //var for the line itself
 let line;
 
 // Event listeners
@@ -71,7 +75,8 @@ stage.on('mousedown touchstart', (e) => {
             shape.destroy();
             layer.batchDraw();
         }
-    } else {
+    } 
+    else {
         // enabling the drawing mode
         isDrawing = true;
         line = new Konva.Line({
@@ -107,6 +112,61 @@ eraseButton.addEventListener('click', () => {
         eraseButton.innerText = 'Erase Mode';
     }
 });
+
+
+
+
+//Event listener for drawing straight lines button
+
+//when the mouse button is clicked and held, start a new line at the nearest grid point
+const StraightLine = document.getElementById('StraightLine');
+StraightLine.addEventListener('click',() => {
+stage.on('mousedown touchstart', (e) => {
+
+    isDrawing = true;
+    startPoint = snap(stage.getPointerPosition());
+});
+
+//if the user is drawing, have the line follow the pointer position and snap to the nearest grid point
+stage.on('mousemove touchmove', (e) => {
+    if (!isDrawing) return;
+
+    const pos = snap(stage.getPointerPosition());
+
+    // Create or update the line
+    if (!line) {
+        line = new Konva.Line({
+            stroke: 'black',
+            strokeWidth: 5,
+            globalCompositeOperation: 'source-over',
+            lineCap: 'round',
+            points: [startPoint.x, startPoint.y, pos.x, pos.y],
+        });
+        layer.add(line);
+    } else {
+        line.points([startPoint.x, startPoint.y, pos.x, pos.y]);
+    }
+
+    layer.batchDraw();
+});
+
+//when the mouse button is released stop drawing
+stage.on('mouseup touchend', () => {
+    isDrawing = false;
+    startPoint = null;
+    line = null;
+});
+
+//add the line to the layer once its done
+stage.on('mousemove touchmove', (e) => {
+    if (!isDrawing) return;
+    const pos = stage.getPointerPosition();
+    lastLine.points(lastLine.points().concat([pos.x, pos.y]));
+    layer.batchDraw();
+});
+});
+
+//!!end event listeners!!
 
 // picking color here
 const colorPicker = document.getElementById('colorPicker');
