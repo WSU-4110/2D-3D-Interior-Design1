@@ -1,3 +1,10 @@
+## Meeting 9
+Date: 11/7/2023
+<br>Topic: Prep for Sprint 2 Presentation
+ -  Discuss whose laptop we were pesenting off of
+ -  finishing touches on work from sprint 2
+ -  Make sure we are all at the same spot locally
+
 ## Meeting 8
 Date: 11/6/23
 <br>Topic: Check-in for Sprint 2 Presentation
