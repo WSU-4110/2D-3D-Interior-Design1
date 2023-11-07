@@ -46,14 +46,14 @@
             display: none;
             position: absolute;
             top: 0;
-            left: 100%; 
+            left: 100%; /* Position to the right of the parent item */
             background-color: #333;
             padding: 10px;
         }
 
         .arrow {
-            transform: rotate(90deg); 
-            transition: transform 0.3s; 
+            transform: rotate(90deg); /* Rotate the arrow 90 degrees for right-pointing */
+            transition: transform 0.3s; /* Add a smooth transition */
         }
 
         .sub-menu.active {
@@ -61,7 +61,7 @@
         }
 
         .sub-menu.active .arrow {
-            transform: rotate(0); 
+            transform: rotate(0); /* Reset rotation when active */
         }
 
         .content {
@@ -135,9 +135,16 @@
             submenu.classList.toggle('active');
         }
 
-        function showImages(furnitureType) {
-            var imageBox = document.getElementById('image-box');
-            imageBox.style.display = 'block';
+
+            function showImages(furnitureType) {
+                    var imageBox = document.getElementById('image-box');
+                
+                    if (imageBox.style.display === 'block') {
+                        
+                        imageBox.style.display = 'none';
+                    } 
+                    else {
+
 
             var bedImages = createHTMLElement('div', 'furniture-images');
 
@@ -154,11 +161,22 @@
 
             imageBox.innerHTML = ''; 
             imageBox.appendChild(bedImages);
+            imageBox.style.display = 'block'; // Display the images
         }
+    }
+
+
+
 
         function showImages2(furnitureType) {
             var imageBox = document.getElementById('image-box');
-            imageBox.style.display = 'block';
+            
+            if (imageBox.style.display === 'block') {
+                        
+                        imageBox.style.display = 'none';
+                    } 
+                    else {
+            
 
             var couchImages = createHTMLElement('div', 'furniture-images'); 
 
@@ -175,11 +193,19 @@
 
             imageBox.innerHTML = ''; 
             imageBox.appendChild(couchImages);
-}
+            imageBox.style.display = 'block'; // Display the images
+        }
+    }
 
         function showImages3(furnitureType) {
             var imageBox = document.getElementById('image-box');
-            imageBox.style.display = 'block';
+
+            if (imageBox.style.display === 'block') {
+                        
+                        imageBox.style.display = 'none';
+                    } 
+                    else {
+            
 
             var tableImages = createHTMLElement('div', 'furniture-images'); 
 
@@ -196,10 +222,17 @@
 
             imageBox.innerHTML = ''; 
             imageBox.appendChild(tableImages);
+            imageBox.style.display = 'block'; 
         }
+    }
 
         function showImages4(furnitureType) {
             var imageBox = document.getElementById('image-box');
+            if (imageBox.style.display === 'block') {
+                        
+                        imageBox.style.display = 'none';
+                    } 
+                    else {
             imageBox.style.display = 'block';
 
             var wardrobeImages = createHTMLElement('div', 'furniture-images'); 
@@ -217,7 +250,9 @@
 
             imageBox.innerHTML = ''; 
             imageBox.appendChild(wardrobeImages);
+            imageBox.style.display = 'block'; 
         }
+    }
 
         function hideImages() {
             var imageBox = document.getElementById('image-box');
