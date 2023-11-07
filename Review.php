@@ -20,4 +20,3 @@ class Review{
      function get_rev()
      { return $this->rev; }
 }
-?>
