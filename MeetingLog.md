@@ -1,3 +1,10 @@
+## Meeting 8
+Date: 11/6/23
+<br>Topic: Check-in for Sprint 2 Presentation
+ -  Reviewed changes made over the weekend
+ -  Decided on what files were ready to merge for the presentation
+ -  Set time for changes to be finalized for tomorrow
+
 ## Meeting 7
 Date: 11/2/23
 <br>Topic: Presentation Plan and Progress Discussion
