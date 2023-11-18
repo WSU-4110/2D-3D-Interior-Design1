@@ -1,8 +1,15 @@
-// test/example-test.js
-const assert = require('assert');
+// example_test.js
 
-describe('Example Test', function () {
-  it('should pass when true is true', function () {
-    assert.strictEqual(true, true);
+const assert = require('assert');
+const myModule = require();
+
+describe('MyModule', () => {
+  it('should do something', () => {
+    const result = myModule.doSomething();
+    assert.strictEqual(result, expectedValue);
+  });
+
+  it('should handle another case', () => {
   });
 });
+
