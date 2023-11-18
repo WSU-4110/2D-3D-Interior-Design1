@@ -8,6 +8,11 @@ class ReviewTest extends \PHPUnit\Framework\TestCase{
         $expectedEmail = "test@test.com";
         $expectedRev = "test review";
         $expectedName = "test";
+        
+        $review-> __construct("test@test.com","test review","test");
+        $this->assertEquals("$expectedEmail", $review->get_email());
+        $this->assertEquals("$expectedRev", $review->get_rev());
+        $this->assertEquals("$expectedName", $review->get_name());
 
         print("\n");
         print("expected: "); print($expectedEmail);
@@ -21,12 +26,6 @@ class ReviewTest extends \PHPUnit\Framework\TestCase{
         print("expected: "); print($expectedName);
         print("\n");
         print("actual: "); print($review->get_name());
-        
-
-        $review-> __construct("test@test.com","test review","test");
-        $this->assertEquals("$expectedEmail", $review->get_email());
-        $this->assertEquals("$expectedRev", $review->get_rev());
-        $this->assertEquals("$expectedName", $review->get_name());
     }
 
     /** @test */
