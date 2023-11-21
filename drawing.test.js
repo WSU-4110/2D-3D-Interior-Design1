@@ -4,10 +4,8 @@ const { JSDOM } = require('jsdom');
 const fs = require('fs');
 const path = require('path');
 
-// Load Konva using CommonJS require syntax
 const Konva = require('konva-node');
 
-// Your test suite for drawing functionality
 describe('Drawing functionality', () => {
     let window;
 
@@ -15,7 +13,6 @@ describe('Drawing functionality', () => {
     const htmlPath = path.resolve(__dirname, 'pl.html');
     const html = fs.readFileSync(htmlPath, 'utf-8');
 
-    // Set up a basic HTML structure
     const virtualHTML = `
     <!DOCTYPE html>
     <html>
