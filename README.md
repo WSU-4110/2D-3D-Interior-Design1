@@ -2,7 +2,7 @@
 TASKS FOR NEXT MEETING: 11/27/23
 -----
 LAVENDER
-- [ ] fix unit testing
+- [x] fix unit testing
 - [ ] get docker environment set up
 - [ ] get github script working
 - [x] rename main page on github
