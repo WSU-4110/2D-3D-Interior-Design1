@@ -1,0 +1,26 @@
+{
+  "name": "blah",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "main": "test.js",
+  "scripts": {
+    "test": "mocha '*.test.js' --reporter landing"
+  },
+  "author": "Lavender",
+  "license": "MIT",
+  "devDependencies": {
+    "@sinonjs/referee-sinon": "^11.0.0",
+    "chai": "^4.3.10",
+    "jsdom": "^22.1.0",
+    "konva": "^9.2.3",
+    "mocha": "^10.2.0",
+    "sinon": "^17.0.1"
+  },
+  "dependencies": {
+    "jsdom-global": "^3.0.2",
+    "jsverify": "^0.8.4",
+    "knuth-shuffle": "^1.0.8",
+    "konva-node": "^0.11.2",
+    "util.promisify": "^1.1.2"
+  }
+}
