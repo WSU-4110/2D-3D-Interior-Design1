@@ -1,3 +1,33 @@
+<?php
+if (isset($_POST["email"])) {
+    $mysqli = require __DIR__ . "/database_connection.php"; 
+    $email = $mysqli->real_escape_string($_POST["email"]);
+    $password = $_POST["password"];
+
+    echo $email;
+    echo $password;
+
+    $sql = sprintf("SELECT * FROM login WHERE email = '%s'", $email);
+    $result = $mysqli->query($sql);
+
+    if ($result->num_rows > 0) {
+        $login = $result->fetch_assoc();
+
+        // Check if the entered password matches the stored password
+        if ($password == $login["password"]) { 
+            // Passwords match, login successful
+            header("Location: Homepage1.html");
+            exit(); // Ensure that the script stops executing after the redirect
+        } else {
+            // Passwords do not match
+            echo "Incorrect password. Please try again.";
+        }
+    } else {
+        // User with the given email does not exist
+        echo "User not found. Please register or check your credentials.";
+    }
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,34 +51,35 @@
                 </div>
                 <span>or use your email for registeration</span>
                 <input type="text" placeholder="Name" name="name">
-                <input type="email" placeholder="Email" name="email">
-                <input type="password" placeholder="Password" name="password">
+                <input type="email" placeholder="Email" name="email" id="email">
+                <input type="password" placeholder="Password" name="password" id="password">
                 <button type="submit">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
+            <form action=""  method="post">
                 <h1>Sign In</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a> 
+                 </div>
                 <span>or use your email password</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
+                <input type="email" placeholder="Email" name="email">
+                <input type="password" placeholder="Password" name="password">
                 <button type="submit">Sign In</button>
             </form>
         </div>
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
+                    <form method="post">
                     <h1>Welcome Back!</h1>
                     <p>Enter your details to use web app features</p>
                     <button class="hidden" id="login">Sign In</button>
+                    </form>
                 </div>
                 <div class="toggle-panel toggle-right">
-                    <h1>Hello, Friend!</h1>
+                    <h1>Hello, Designer!</h1>
                     <p>Register with your personal details to use all of site features</p>
                     <button class="hidden" id="register">Sign Up</button>
                 </div>
