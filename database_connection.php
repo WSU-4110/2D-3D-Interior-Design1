@@ -8,7 +8,8 @@
     $mysqil = new mysqli(hostname:$host, 
                          username:$username, 
                          password:$password, 
-                         database:$dbname);
+                         database:$dbname,
+                         port:3307);
 
         if ($mysqil->connect_error) {
             die("connection error: ". $mysqil->connect_error);
