@@ -1,21 +1,31 @@
 # 2D-3D-Interior-Design1
-TASKS FOR NEXT MEETING: 11/28/23
+TASKS FOR NEXT MEETING: 11/30/23 4:15 PM
 -----
+EVERYONE
+- [ ] Fix develop branch conflicts
+      
 LAVENDER
-- [x] fix unit testing
-- [x] get docker environment set up
-- [ ] get github script working
-- [x] rename main page on github
+- [ ] Set up bridge between two docker containters
+- [ ] Figure out how to change F2B image path
+- [ ] Run F2B script from webpage (???)
 
-MOHIMA + NAZ
-- [ ] define css file for website pages + integrate
-- [x] adding and validating furniture placement
-- [ ] furniture needs to be rotatable and resizeable
-- [ ] spruce up website
+NAZ
+- [ ] Snapping center of furniture image
+- [ ] Adding doors and windows (architectural symbols?)
+      
+MOHIMA
+- [ ] Make grid 850 x 850
+- [ ] Make gid background white
 
-HANNAH + HUMAIRA
-- [x] finish database for login (consider different options)
+HANNAH
+- [ ] Finish reviews
+- [ ] Change about font color page
 
-POTENTIALLY
------
-- [x] clean develop branch
+HUMAIRA
+- [ ] Set up 3D export skeleton page
+
+BACKLOG
+----
+- [ ] Save images to user account (?)
+- [ ] Rotating furniture
+- [ ] Furniiture placement validation
