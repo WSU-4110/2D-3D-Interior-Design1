@@ -1,3 +1,15 @@
+## Meeting 11
+Date: 11/28/2023
+<br>Topic: Discuss final presentation
+ - Discuss how we want to approach last topics
+ - Go over each topic and discuss feasibility and progress
+ - Prepare for demo presentation
+ - Discuss github issues  
+
+## Meeting 10
+Date: 11/21/2023
+<br>
+
 ## Meeting 9
 Date: 11/7/2023
 <br>Topic: Prep for Sprint 2 Presentation
