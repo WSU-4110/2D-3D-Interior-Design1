@@ -1,3 +1,10 @@
+## Meeting 12 
+Date: 11/30/2023
+<br>Topic: Discuss Sprint 3 
+- Discuss remaining functional requirements
+- Discuss tasks for over the weekend
+- Discuss going to node.js 
+
 ## Meeting 11
 Date: 11/28/2023
 <br>Topic: Discuss final presentation
