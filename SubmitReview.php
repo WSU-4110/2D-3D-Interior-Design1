@@ -40,11 +40,25 @@ if(isset($_POST['submit']))
     <div class ="center">
         <h1>Submit a Review</h1>
         <form action="" method="post">
+            <input type="name" placeholder="Name that will be Visible" name="name" onfocus="this.value"<br>
             <input type="email" placeholder="Email" name="email" onfocus="this.value=''"><br>
             <input type="text" placeholder="Enter your review"  name="rev" class="textbox" onfocus="this.value=''" ><br/>
-            <input type="text" placeholder="Enter name to display on review page"  name="name" class="textbox" onfocus="this.value=''" ><br/>
             <input type="submit" name="submit" />
         </form>
+        <h1>Reviews</h1>
+        <?php
+        $mysqil = mysqli_connect('localhost','root','','test1',3307);
+        $sql = "SELECT * FROM review";
+        $result = $mysqil->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "User " . $row["name"] . " Said: " . $row["paragraph"] . "<br>" . "<br>";
+            }
+        } else {
+            echo "0 results";
+        }
+        ?>
     </div>
 </body>
 
