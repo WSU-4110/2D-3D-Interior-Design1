@@ -234,10 +234,7 @@ h1.typing-text {
 h1, .typing-text {
     font-family: 'Your Serif. Font';
 }
-nav ul li a::after {
-    content: ' →'; /* Add a right arrow */
-    margin-left: 5px; /* Adjust spacing between text and arrow */
-}
+
 nav ul li a {
     font-family: 'Your Cool Font', sans-serif;
     text-transform: uppercase;
