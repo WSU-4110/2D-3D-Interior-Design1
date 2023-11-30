@@ -19,7 +19,9 @@ MOHIMA
 
 HANNAH
 - [ ] Finish reviews
-- [ ] Change about font color page
+- [X] Change about font color page
+- [ ] Box on homepage
+- [ ] Buttons on homepage
 
 HUMAIRA
 - [ ] Set up 3D export skeleton page
