@@ -20,7 +20,7 @@ MOHIMA
 HANNAH
 - [ ] Finish reviews
 - [X] Change about font color page
-- [ ] Box on homepage
+- [X] Box on homepage
 - [ ] Buttons on homepage
 
 HUMAIRA
