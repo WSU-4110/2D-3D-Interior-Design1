@@ -21,7 +21,7 @@ HANNAH
 - [ ] Finish reviews
 - [X] Change about font color page
 - [X] Box on homepage
-- [ ] Buttons on homepage
+- [X] Buttons on homepage
 
 HUMAIRA
 - [ ] Set up 3D export skeleton page
