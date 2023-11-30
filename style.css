@@ -125,8 +125,8 @@ button {
 }
 
 .card p {
-    color: #a4daf0c0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FF8C00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     font-size: 15px;
     font-weight: bold;
 }
@@ -218,7 +218,7 @@ button {
     overflow: hidden; /* Hide the overflow text */
     white-space: nowrap; /* Prevent text from wrapping */
     animation: typing 4s steps(40, end) 1s 1 normal both; /* 1 iteration */
-    color: #8B4513; /* Start with a brown color (adjust to your desired shade) */
+    color: #FF8C00; /* Start with a brown color (adjust to your desired shade) */
 }
 
 h1.typing-text {
