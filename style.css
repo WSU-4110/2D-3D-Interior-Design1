@@ -99,8 +99,8 @@ button {
 }
 
 .card {
-    width: 200px;
-    height: 250px;
+    width: 600px;
+    height: 350px;
     display: inline-block;
     border-radius: 15px;
     padding: 10px;
@@ -121,31 +121,15 @@ button {
 .card h5 {
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 22px;
-}
-
-.card p {
-    color: #FF8C00;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.card1 {
-    background-image: url(images/bedroom.jpeg);
-}
-
-.card2 {
-    background-image: url(images/livingroom.jpeg);
+    font-size: 40px;
+    margin-top: 80px;
+    backdrop-filter: blur(5px);
 }
 
 .card3 {
     background-image: url(images/office.jpeg);
 }
 
-.card4 {
-    background-image: url(images/space.jpeg);
-}
 
 .card:hover {
     transform: translate(-10px);
