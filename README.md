@@ -18,10 +18,11 @@ MOHIMA
 - [ ] Make gid background white
 
 HANNAH
-- [ ] Finish reviews
+- [X] Finish reviews
 - [X] Change about font color page
 - [X] Box on homepage
 - [X] Buttons on homepage
+- [ ] Move changes to develop branch (i dont have the option to make a pull request, not sure why)
 
 HUMAIRA
 - [ ] Set up 3D export skeleton page
