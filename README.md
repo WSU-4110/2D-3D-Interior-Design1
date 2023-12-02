@@ -25,7 +25,7 @@ HANNAH
 - [ ] Move changes to develop branch (i dont have the option to make a pull request, not sure why)
 
 HUMAIRA
-- [ ] Set up 3D export skeleton page
+- [X] Set up 3D export skeleton page
 
 BACKLOG
 ----
