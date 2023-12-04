@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const backgroundLayer = new Konva.Layer();
     stage.add(backgroundLayer);
     
-    
-    /*
     backgroundLayer.add(new Konva.Rect({
-        width: stage.width(),
-        height: stage.height(),
-        fill: 'white', // Background color
+    
+    width: stage.width(),
+    height: stage.height(),
+    fill: 'white',
+    // Background color
     }));
-    backgroundLayer.draw();*/
+    backgroundLayer.draw();
     
     //setting up the grid layer
     const gridLayer = new Konva.Layer();
