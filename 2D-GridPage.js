@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     //initialization
-    
+    let quarterCircle;
     const stage = new Konva.Stage({
         container: 'container',
         width: window.innerWidth,
@@ -127,6 +127,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     draggable: true, // enable drag-and-drop
                 });
                 layer.add(square);}
+                
+             else if (selectedShape === 'quarterCircle') {
+                
+                 quarterCircle = new Konva.Arc({
+            x: stage.getPointerPosition().x,
+            y: stage.getPointerPosition().y,
+            innerRadius: 0,
+            outerRadius: 0,
+            angle: 90,
+            stroke: document.getElementById('colorPicker').value,
+            strokeWidth: penSize,
+            draggable: true,
+        });
+        layer.add(quarterCircle);
+    }
             ///////////////////////////////////////////////////////////////////////////////////////////////
     
             startPoint = snap(stage.getPointerPosition());
@@ -165,6 +180,14 @@ document.addEventListener('DOMContentLoaded', () => {
             square.width(width);
             square.height(height);
         }
+        else if (selectedShape === 'quarterCircle') {
+        const dx = pos.x - startPoint.x;
+        const dy = pos.y - startPoint.y;
+        const radius = Math.sqrt(dx * dx + dy * dy);
+        const angle = Math.atan2(dy, dx) * (180 / Math.PI); // Convert radians to degrees
+        quarterCircle.outerRadius(radius);
+        quarterCircle.angle(angle);
+    }
     
         
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -200,7 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
             currentShape = circle;
         } else if (selectedShape === 'square') {
             currentShape = square;
-        }
+        } else if (selectedShape === 'quarterCircle') {
+        currentShape = quarterCircle;}
     
         // Add the shape to the history
         history.push(currentShape);
@@ -253,7 +277,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (selectedShape === 'square') {
             // Finalize the square drawing
             currentShape = square;
-        }
+        } else if (selectedShape === 'quarterCircle'){
+            currentShape = quarterCircle;}
     
         // Add the shape to the history
         history.push(currentShape);
