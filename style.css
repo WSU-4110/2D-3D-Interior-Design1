@@ -4,135 +4,242 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/background.jpeg);
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/back.jpeg);
     background-position: center;
     background-size: cover;
     padding-left: 8%;
     padding-right: 8%;
     box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
+}
 
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/back.jpeg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
 }
 
 .navbar {
     height: 12%;
     display: flex;
-justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    width: 100px;
-    cursor: pointer;
-    margin-left: auto;
-
+    width: 100%; /* Make the logo fill the circular container */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
 
 nav {
     flex: 1;
     text-align: right;
 }
+
 nav ul li {
-  list-style: none;
-  display: inline-block;
-  margin-left: 60px;
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
 }
+
 nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 13px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
 }
-
-a {
-  color: rgb(234, 234, 248); 
-  text-decoration: none; 
-}
-
-a:hover {
-  color: #ff9900;
-}
-
 
 .menu-icon {
     width: 30px;
     cursor: pointer;
-    margin-left: 1200px; 
+    margin-left: 1200px;
 }
+
 .row {
-	display: flex;
-	height: 88%;
-	align-items: center;
+    display: flex;
+    height: 88%;
+    align-items: center;
 }
+
 .col {
-	flex-basis: 50%;
+    flex-basis: 50%;
 }
-h1{
-	color: #fff;
-	font-size: 76px;
+
+h1 {
+    color: #fff;
+    font-size: 70px;
+    margin-left: -18%;
+    white-space: nowrap;
 }
+
 p {
-	color: #fff;
-	font-size: 20px;
-	line-height: 20px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 50px;
+    margin-left: -18%;
 }
 
 button {
-  width: 150px; /* Adjust the width to make the button wider */
-  color: #000;
-  font-size: 20px;
-  padding: 12px 0;
-  background: #fff;
-  border: 0;
-  border-radius: 10000px;
-  outline: none;
-  margin-top: 30px;
+    width: 150px;
+    color: #000;
+    font-size: 20px;
+    padding: 12px 0;
+    background: #fff;
+    border: 0;
+    border-radius: 10000px;
+    outline: none;
+    margin-top: 30px;
 }
 
 .card {
-  width: 200px;
-  height: 230px; /* Add a fixed height to ensure consistent alignment */
-  display: inline-block;
-  border-radius: 15px;
-  padding: 10px 25px;
-  box-sizing: border-box;
-  cursor: pointer;
-  margin: 10px 15px;
-  background-image: url(images/furniture.avif);
-  background-position: center;
-  background-size: cover;
-  color: brown;
-  transition: transform 0.5s;
+    width: 600px;
+    height: 350px;
+    display: inline-block;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    background-position: center;
+    background-size: cover;
+    color: brown;
+    transition: transform 0.5s;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 15px 15px 0 0;
 }
 
 .card h5 {
-	
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-size: 20px;
-
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 40px;
+    margin-top: 80px;
+    backdrop-filter: blur(5px);
 }
 
-.card p {
-  color: #jjj;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-size: 10px;
-  font-weight: bold;
-}
-
-.card1 {
-background-image: url(images/bedroom.jpeg); 
-}
-.card2 {
-background-image: url(images/livingroom.jpeg); 
-}
 .card3 {
-background-image: url(images/office.png); 
-}
-.card4 {
-background-image: url(images/space.webp); 
+    background-image: url(images/office.jpeg);
 }
 
-.card:hover{
-	transform: translate(-10px);
+
+.card:hover {
+    transform: translate(-10px);
+}
+
+.oval-image {
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 200px;
+}
+
+.horizontal-image {
+    width: 400px;
+    height: auto;
+}
+.picture-container {
+    margin-top: 20px; /* Adjust the margin value to move the picture down */
+}
+/* Keyframes for the zoom effect */
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1); /* Start at the normal size */
+    }
+    100% {
+        transform: scale(1.2); /* End at a slightly larger size (adjust as needed) */
+    }
+}
+
+/* Apply the zoom effect to the logo */
+.logo.zoom-effect {
+    animation: zoomEffect 3s infinite alternate; /* Apply the 'zoomEffect' animation with alternate repeat mode */
+}
+
+.zoom-effect {
+    animation: zoomEffect 4s infinite alternate;
+}
+
+/* Keyframes for the typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Keyframes for the color change effect */
+@keyframes colorChange {
+    0% {
+        color: #8B4513; /* Start with a brown color (adjust to your desired shade) */
+    }
+    25% {
+        color: #A0522D; /* Transition to another brown shade */
+    }
+    50% {
+        color: #D2691E; /* Transition to a different brown shade */
+    }
+    75% {
+        color: #CD853F; /* Transition to another brown shade */
+    }
+    100% {
+        color: #8B4513; /* Return to the initial brown shade */
+    }
+}
+
+/* Apply the typing effect to the text within a class "typing-text" */
+.typing-text {
+    font-family: 'Your Script Font', cursive;
+    overflow: hidden; /* Hide the overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: typing 4s steps(40, end) 1s 1 normal both; /* 1 iteration */
+    color: #FF8C00; /* Start with a brown color (adjust to your desired shade) */
+}
+
+h1.typing-text {
+    margin-left: -18%;
+    font-size: 70px;
+}
+
+/* Apply the color change effect to the text within a class "color-change-effect" */
+.typing-text.color-change-effect {
+    animation: colorChange 8s infinite alternate; /* Apply the color-changing animation */
+}
+
+h1, .typing-text {
+    font-family: 'Your Serif. Font';
+}
+
+nav ul li a {
+    font-family: 'Your Cool Font', sans-serif;
+    text-transform: uppercase;
+    padding: 10px 20px; /* Adjust the padding to your preference */
+    border: 2px solid #FFA500; /* Add a dark orange border around the links */
+    color: #fff; /* Text color */
+    background-color: transparent; /* Background color for the links */
+    border-radius: 5px; /* Add rounded corners to the border */
+    transition: border-color 0.3s; /* Add a transition for the border color */
+}
+.logo-container {
+    width: 204px; /* Adjust the dimensions as needed to match your logo */
+    height: 204px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow content */
+    border: 2px solid #FFA500; /* Orange border */
+    border-radius: 50%; /* Create a circular container */
+}
+nav ul li a:hover {
+    border-color: #333; /* Change the border color on hover */
+    color: #FFA500; /* Change the text color on hover */
+}
