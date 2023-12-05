@@ -1,4 +1,5 @@
 #ignore files of these types
+.DS_Store
 
 #ignore all files in these folders
 .vscode/
