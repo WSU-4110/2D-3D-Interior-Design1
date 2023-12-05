@@ -1,5 +1,6 @@
 #ignore files of these types
 manage.py
+.DS_Store
 
 #ignore all files in these folders
 .vscode/
