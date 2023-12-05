@@ -1,0 +1,222 @@
+/* Your existing styles remain unchanged */
+
+.snappable-images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.snappable-image {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    margin: 10px;
+    border: 2px solid #333;
+    cursor: pointer;
+}
+
+.snappable-image:hover {
+    border: 2px solid #ff9900;
+}
+
+.image-box {
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+    position: relative; /* Change to relative or remove it */
+    z-index: 2;
+}
+
+.flooring-options {
+    display: none;
+}
+
+.flooring-options.active {
+    display: block;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/back.jpeg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.toolbar {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+    background-color: rgb(29, 30, 30);
+    position: sticky;
+    bottom: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    z-index: 2;
+}
+
+.menubar {
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    background-color: rgb(165, 178, 201);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.options {
+    position: relative;
+    display: inline-block;
+}
+
+.optionsbtn {
+    font-size: 16px;
+    background-color: #555;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.optionsbtn:hover {
+    background-color: #333;
+}
+
+.dropdownbtn {
+    border: none;
+    color: lavender;
+    cursor: pointer;
+    color: rgb(0, 114, 76);
+    width: auto;
+    height: inherit;
+    left: 0;
+}
+
+.options-content {
+    width: 20px;
+    display: none;
+    position: absolute;
+    background-color: beige;
+}
+
+.extrasbar {
+    position: sticky;
+    right: 0;
+    background-color: deeppink;
+    border-radius: 10px;
+    width: 20px;
+    z-index: 1s;
+}
+
+/* Show the dropdown menu on hover */
+.options:hover .options-content {
+    display: block;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(rgba(249, 248, 248, 0.7), rgba(248, 247, 247, 0.7)), url(images/back.jpeg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 1%;
+    padding-right: 1%;
+    box-sizing: border-box;
+    margin-left: 20%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #bccf0d83;
+    font-family: Arial, sans-serif;
+}
+
+.menu {
+    width: 250px;
+    background-color: #0e61335d;
+    color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    height: 100%;
+    padding-top: 20px;
+    z-index: 2;
+    font-family: 'Your Preferred Font', sans-serif;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    z-index: 2;
+}
+
+.menu li {
+    margin: 10px 0;
+    z-index: 2;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    border-left: 5px solid transparent;
+    z-index: 2;
+    font-family: Monospace, sans-serif;
+}
+
+.menu a#design-a-room {
+    background-color: #1b3503;
+    font-weight: bold;
+    font-family: Monospace, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    padding: 15px;
+}
+
+.menu a#furniture-button {
+    font-weight: bold;
+    font-family: Monospace, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    padding: 15px;
+    background-color: #1b3503;
+    border: 1px solid #1b3503;
+    border-radius: 5px;
+    color: rgb(185, 231, 18);
+}
+
+.menu a#furniture-button:hover {
+    background-color: #555;
+    border: 1px solid #555;
+}
+
+.furniture-images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.furniture-image {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    margin: 10px;
+    border: 2px solid #333;
+    cursor: pointer;
+}
+
+.furniture-image:hover {
+    border: 2px solid #ff9900;
+}
+
+.toolbar div::first-line {
+    color: white;
+}
