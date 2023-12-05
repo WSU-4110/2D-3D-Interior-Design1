@@ -11,11 +11,11 @@ LAVENDER
 
 NAZ
 - [ ] Snapping center of furniture image
-- [ ] Adding doors and windows (architectural symbols?)
       
 MOHIMA
-- [ ] Make grid 850 x 850
-- [ ] Make gid background white
+- [X] Make grid 850 x 850 (messed up the design of the page)
+- [X] Make grid background white
+- [X] Adding doors and windows (architectural symbols?)
 
 HANNAH
 - [X] Finish reviews
