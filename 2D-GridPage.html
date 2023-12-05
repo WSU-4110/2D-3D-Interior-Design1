@@ -1,140 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Display Furniture on Click</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snappable Images - Display Furniture on Click</title>
+    <link rel="stylesheet" href="https://unpkg.com/draggable@4.0.0-beta.12/dist/draggable.css">
+    <script src="https://unpkg.com/draggable@4.0.0-beta.12/dist/draggable.js"></script>
+    <script src="https://cdn.rawgit.com/konvajs/konva/2.6.0/konva.min.js"></script>
+    <script src="Grid.js"></script>
     <style>
-    
-    
-    
-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/back.jpeg);
-    background-position: center; 
-    background-size: cover;
-    padding-left: 8%;
-    padding-right: 8%;
-    box-sizing: border-box;
-    margin: 0;
-    overflow-x: hidden;
-    /*background-color: #0c0b0b;
-    color: #f0f0f0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-*/
-}
-
-.toolbar {
-        display: grid;
-      grid-auto-flow: column;
-      grid-column-gap: 10px;
-      background-color: rgb(29, 30, 30);
-      position: sticky;
-      bottom: 5px;
-      padding: 10px;
-      border-radius: 10px;
-      margin: 5px;
-      z-index: 2;
-      
-    }
-
-    .menubar {
-        position: sticky;
-      top: 0;
-      padding: 10px;
-      background-color: rgb(165, 178, 201);
-      border-radius: 10px;
-      margin: 5px;
-      /*z-index: 1;*/
-    }
-
-    .options {
-      position: relative;
-      display: inline-block;
-    }
-        
-    .optionsbtn {
-  font-size: 16px;
-  background-color: #555;
-  color: #fff;
-  border: 1px solid #555;
-}
-
-.optionsbtn:hover {
-  background-color: #333;
-}
-
-    .dropdownbtn {
-      border: none;
-      color: lavender;
-      cursor: pointer;
-      color: dimgray;
-      width: auto;
-      height: inherit;
-      left: 0;
-    }
-
-    
-    .options-content {
-      width: 20px;
-      display: none;
-      position: absolute;
-      background-color: beige;
-    }
-
-    .extrasbar {
-      position: sticky;
-      right: 0;
-      background-color: deeppink;
-      border-radius: 10px;
-      width: 20px;
-      z-index: 1s;
-    }
-
-    /* Show the dropdown menu on hover */
-    .options:hover .options-content {
-      display: block;
-    }
-
-    /********************************************************/
-.container {
-    width: 100%;
-    height: auto;
-    background: linear-gradient(rgba(249, 248, 248, 0.7), rgba(248, 247, 247, 0.7)), url(images/back.jpeg);
-    background-position: center;
-    background-size: cover;
-    padding-left: 1%;
-    padding-right: 1%;
-    box-sizing: border-box;
-    margin-left: 20%;
-}
-
+        .snappable-images {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center; 
+            z-index: 3;
+        }
+        .snappable-image {
+            width: 150px;
+            height: 150px;
+            background-color: #ccc;
+            margin: 10px;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
+        .snappable-image:hover {
+            border: 2px solid #ff9900;
+        }
+        .image-box {
+            background-color: #fff;
+            padding: 20px;
+            display: none;
+            position: relative;
+            z-index: 2;
+        }
+        .flooring-options {
+            display: none;
+        }
+        .flooring-options.active {
+            display: block;
+        }
         body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/back.jpeg);
+            background-position: center; 
+            background-size: cover;
+            padding-left: 8%;
+            padding-right: 8%;
+            box-sizing: border-box;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .toolbar {
+            display: grid;
+            grid-auto-flow: column;
+            grid-column-gap: 10px;
+            background-color: rgb(29, 30, 30);
+            position: sticky;
+            bottom: 5px;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px;
+            z-index: 2;
+        }
+        .menubar {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            background-color: rgb(165, 178, 201);
+            border-radius: 10px;
+            margin: 5px;
+        }
+        .options {
+            position: relative;
+            display: inline-block;
+        }
+        .optionsbtn {
+            font-size: 16px;
+            background-color: #555;
+            color: #fff;
+            border: 1px solid #555;
+        }
+        .optionsbtn:hover {
+            background-color: #333;
+        }
+        .dropdownbtn {
+            border: none;
+            color: lavender;
+            cursor: pointer;
+            color: rgb(0, 114, 76);
+            width: auto;
+            height: inherit;
+            left: 0;
+        }
+        .options-content {
+            width: 20px;
+            display: none;
+            position: absolute;
+            background-color: beige;
+        }
+        .extrasbar {
+            position: sticky;
+            right: 0;
+            background-color: deeppink;
+            border-radius: 10px;
+            width: 20px;
+            z-index: 1s;
+        }
+        .options:hover .options-content {
+            display: block;
+        }
+        .container {
+            width: 100%;
+            height: auto;
+            background: linear-gradient(rgba(249, 248, 248, 0.7), rgba(248, 247, 247, 0.7)), url(images/back.jpeg);
+            background-position: center;
+            background-size: cover;
+            padding-left: 1%;
+            padding-right: 1%;
+            box-sizing: border-box;
+            margin-left: 20%;
+        }
+        .body {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #bccf0d83;
             font-family: Arial, sans-serif;
         }
-
         .menu {
             width: 250px;
-            background-color: #333;
-            color: #fff;
+            background-color: #0e61335d;
+            color: rgba(255, 255, 255, 0.5);
             position: fixed;
             height: 100%;
             padding-top: 20px;
-            z-index: 2; 
+            z-index: 2;
+            font-family: 'Your Preferred Font', sans-serif;
         }
-
         .menu ul {
             list-style: none;
             padding: 0;
             z-index: 2;
         }
-
         .menu li {
             margin: 10px 0;
             z-index: 2;
         }
-
         .menu a {
             text-decoration: none;
             color: #fff;
@@ -142,387 +152,391 @@ body {
             padding: 10px;
             border-left: 5px solid transparent;
             z-index: 2;
+            font-family: Monospace, sans-serif;
         }
-
-        .menu a:hover {
-            background-color: #555;
-            border-left: 5px solid #ff9900;
-        }
-
-        .sub-menu {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: #333;
-            padding: 10px;
-            z-index: 2;
-        }
-
-        .arrow {
-            transform: rotate(90deg);
-            transition: transform 0.3s;
-        }
-
-        .sub-menu.active {
+        .menu a#design-a-room {
+            background-color: #1b3503;
+            font-weight: bold;
+            font-family: Monospace, sans-serif;
+            font-size: 20px;
+            text-align: center;
             display: block;
+            padding: 15px;
         }
-
-        .sub-menu.active .arrow {
-            transform: rotate(0);
+        .menu a#furniture-button {
+            font-weight: bold;
+            font-family: Monospace, sans-serif;
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            padding: 15px;
+            background-color: #1b3503;
+            border: 1px solid #1b3503;
+            border-radius: 5px;
+            color: rgb(185, 231, 18);
         }
-
-        .content {
-            margin-left: 250px;
-            padding: 20px;
-            position: relative; /* Add this property to establish stacking context */
-            z-index: 0; 
+        .menu a#furniture-button:hover {
+            background-color: #555;
+            border: 1px solid #555;
         }
-
-        .image-box {
-            background-color: #fff;
-            padding: 20px;
-            display: none;
-            position: absolute; /* Add this property to position it relative to the content area */
-            right: 0; /* Adjust this value as needed */
-            top: 0; /* Adjust this value as needed */
-            z-index: 2;
-        }
-
         .furniture-images {
-            
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center; 
             z-index: 3;
         }
-
-
-
         .furniture-image {
-           
             width: 150px;
             height: 150px;
             background-color: #ccc;
             margin: 10px;
             border: 2px solid #333;
             cursor: pointer;
-            
         }
-
         .furniture-image:hover {
             border: 2px solid #ff9900;
         }
+        .toolbar div::first-line {
+            color: white;
+        }
+        .sub-menu button.shape-button[data-shape="door"] {
+            width: 150px;
+            height: 150px;
+            background-color: #ccc;
+            margin: 10px;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
 
-
-
-
-
-/*
-  .canvas {
-    background-color: #f0f0f0;
-    padding: 5em;
-  }
-
-  .toolbar {
-    display: grid;
-    grid-auto-flow: column;
-    grid-column-gap: 10px;
-    background-color: rgb(29, 30, 30);
-    position: sticky;
-    bottom: 5px;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px;
-  }
-
-  .menubar {
-    position: sticky;
-    top: 0;
-    padding: 10px;
-    background-color: rgb(165, 178, 201);
-    border-radius: 10px;
-    margin: 5px;
-    z-index: 1;
-  }
-
-
-  .options{
-    position: relative;
-    display: inline-block;
-  }
-
-  .optionsbtn{
-    background-color: #cccccc00;
-    border:none;
-    height: inherit;
-  }
-
-  .dropdownbtn{
-    border: none;
-    color: lavender;
-    cursor: pointer;
-    color: dimgray;
-    width: auto;
-    height: inherit;
-    left:0;
-  }
-
-  .options-content{
-    width: 20px;
-    display: none;
-    position: absolute;
-    background-color: beige;
-  }
-
-  .extrasbar{
-    position: sticky;
-    right: 0;
-    background-color: deeppink;
-    border-radius: 10px;
-    width: 20px;
-    z-index: 1s;
-  }
-  
-  .options:hover .options-content {display: block;}*/
-  .toolbar div::first-line {
-    color: white; /* Set the text color to white */
-}
-
-</style>
+        /* Add this style for the door button on hover */
+        .sub-menu button.shape-button[data-shape="door"]:hover {
+            border: 2px solid #ff9900;
+        }
+    </style>
 <script src="https://cdn.rawgit.com/konvajs/konva/2.6.0/konva.min.js"></script>
 </head>
 <body>
-    <div class="menu"> 
+ <div class="menu"> 
 
 
-    
-        <ul>
-            <li><a href="#">Design A Room</a></li>
-            <li>
-                <a href="#" onclick="toggleSubMenu()">Furniture <span class="arrow">&#9654;</span></a>
-                <ul class="sub-menu" id="sub-menu">
-                    <li><a href="#" onclick="showImages('bed')">Bed</a></li>
-                    <li><a href="#" onclick="showImages2('couch')">Couch</a></li>
-                    <li><a href="#" onclick="showImages3('table')">Table</a></li>
-                    <li><a href="#" onclick="showImages4('wardrobe')">Wardrobe</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Paint</a></li>
-            <li class="current-item"><a href="Index.html">Flooring</a></li>
-            <li><a href="#">Site Help</a></li>
-        </ul>
-    </div>
-    <div class="content">
-        <div id="image-box" class="image-box">
-       
-        </div>
-    </div>
-
-    <div class="container">
-        
+ 
+ <ul>
+ <li><a href="#">Design A Room</a></li>
+ <li>
+ <a href="#" onclick="toggleSubMenu()">Furniture <span class="arrow">&#9654;</span></a>
+ <ul class="sub-menu" id="sub-menu">
+ <li><a href="#" onclick="showImages('bed')">Bed</a></li>
+ <li><a href="#" onclick="showImages2('couch')">Couch</a></li>
+ <li><a href="#" onclick="showImages3('table')">Table</a></li>
+ <li><a href="#" onclick="showImages4('wardrobe')">Wardrobe</a></li>
+ </ul>
+ </li>
 
 
-          <!--Menu Bar-->
-  <div class="menubar">
+ </ul>
+ </div>
+ <div class="content">
+ <div id="image-box" class="image-box">
+ 
+ </div>
+ </div>
 
-    <!--File Menu-->
-    <div class="options">
-      <button class="optionsbtn">File</button>
-      <div class="options-content">
-        <button id="saveButton"> Save</button>
-        <button id="expButton">Export</button>
-        <button id="clearButton">Clear</button>
-      </div>
-    </div>
-    Length <span id="length">0</span> ft. Angle: <span id="angle">0</span> °
-  </div>
-  </div>
-
-  <!--Canvas-->
-  <div class="canvas" id="container" >
-  </div>
+ <div class="container">
+ 
 
 
-  
-  <!--Toolbar-->
-  <div class="toolbar">
-    <div>
-      Pen Size:
-      <span id="sizeLabel">2</span>
-      <input type="range" min="1" max="10" value="2" class="slider" id="penSlider" />
-    </div>
-    <button id="undoButton">Undo</button>
-    <button id="redoButton">Redo</button>
-    <button id="erase">Erase</button>
-    <button class="shape-button" data-shape="line">Line</button>
-    <button class="shape-button" data-shape="circle">Circle</button>
-    <button class="shape-button" data-shape="square">Square</button>
-    <button class="shape-button" data-shape="quarterCircle">Door</button>
-    <input type="color" id="colorPicker" value="#000000"> <!-- Color picker input -->
-  </div>
+ <!--Menu Bar-->
+ <div class="menubar">
 
-  <div id="colorPopup" style="display: none;">
-    <label for="colorInput">Choose RGB Color:</label>
-    <input type="color" id="colorInput" value="#000000">
-    <button id="applyColorButton">Apply</button>
-    <button id="noneButton">None</button>
-</div>
+ <!--File Menu-->
+ <div class="options">
+ <button class="optionsbtn">File</button>
+ <div class="options-content">
+ <button id="saveButton"> Save</button>
+ <button id="expButton">Export</button>
+ <button id="clearButton">Clear</button>
+ </div>
+ </div>
+ Length <span id="length">0</span> ft. Angle: <span id="angle">0</span> °
+ </div>
+ </div>
 
+ 
 
+ <div class="canvas" id="container">
+    <div id="grid-container"></div>
+ </div>
+ 
+ 
+ <!--Toolbar-->
+ <div class="toolbar">
+ <div>
+ Pen Size:
+ <span id="sizeLabel">2</span>
+ <input type="range" min="1" max="10" value="2" class="slider" id="penSlider" />
+ </div>
+ <button id="undoButton">Undo</button>
+ <button id="redoButton">Redo</button>
+ <button id="erase">Erase</button>
+ <button class="shape-button" data-shape="line">Line</button>
+ <button class="shape-button" data-shape="circle">Circle</button>
+ <button class="shape-button" data-shape="quarterCircle">Door</button>
+ <button class="shape-button" data-shape="square">Square</button>
+ <button class="shape-button" data-shape="quarterCircle">Door</button>
+ <input type="color" id="colorPicker" value="#000000"> <!-- Color picker input -->
+ </div>
 
-  <img id="captured-image" src="" alt="Captured Drawing">
-  
-  <script src="2D-GridPage.js"></script> <!-- Include the JavaScript file -->
-  <!-- Add the script containing the integrated JavaScript code here -->
+ <div id="colorPopup" style="display: none;">
+ <label for="colorInput">Choose RGB Color:</label>
+ <input type="color" id="colorInput" value="#000000">
+ <button id="applyColorButton">Apply</button>
+ <button id="noneButton">None</button>
+</div> 
 
 
 
-    </div>
+ <img id="captured-image" src="" alt="Captured Drawing">
+ 
+ <script src="Grid.js"></script> <!-- Include the JavaScript file -->
+ <!-- Add the script containing the integrated JavaScript code here -->
 
 
 
-    <script>
+ </div>
 
-        function createHTMLElement(tagName, className) {
-            var element = document.createElement(tagName);
-            if (className) {
-                element.classList.add(className);
-            }
-            return element;
-        }
 
-        function toggleSubMenu() {
-            var submenu = document.getElementById('sub-menu');
-            submenu.classList.toggle('active');
-        }
 
-           
-        function showImages(furnitureType) {
+ <script>
+
+ function createHTMLElement(tagName, className) {
+ var element = document.createElement(tagName);
+ if (className) {
+ element.classList.add(className);
+ }
+ return element;
+ }
+
+ function toggleSubMenu() {
+ var submenu = document.getElementById('sub-menu');
+ submenu.classList.toggle('active');
+ }
+
+ 
+ function showImages(furnitureType) {
+ var imageBox = document.getElementById('image-box');
+
+ if (imageBox.style.display === 'block') {
+ imageBox.style.display = 'none';
+ } else {
+ var bedImages = createHTMLElement('div', 'furniture-images');
+
+ for (var i = 1; i <= 4; i++) {
+ var bedImage = createHTMLElement('div', 'furniture-image');
+ var img = document.createElement('img');
+
+ // Use specific images for each bed option
+ switch (i) {
+ case 1:
+ img.src = 'bed1.jpg';
+ break;
+ case 2:
+ img.src = 'bed2.jpg';
+ break;
+ case 3:
+ img.src = 'bed3.jpg';
+ break;
+ case 4:
+ img.src = 'bed4.jpg';
+ break;
+ default:
+ img.src = 'default.jpg'; // Replace with a default image path
+ }
+
+ img.alt = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
+
+ // Apply styling to the image
+ img.style.width = '100%'; // Make the width of the image 100% of the container
+ img.style.height = '100%'; // Make the height of the image 100% of the container
+
+ bedImage.appendChild(img);
+
+ bedImage.onclick = function () {
+ alert('You clicked on ' + this.firstChild.alt + '. You can add it to your design.');
+ };
+
+ bedImages.appendChild(bedImage);
+ }
+
+ imageBox.innerHTML = '';
+ imageBox.appendChild(bedImages);
+ imageBox.style.display = 'block';
+ }
+}
+function showImages2(furnitureType) {
     var imageBox = document.getElementById('image-box');
 
     if (imageBox.style.display === 'block') {
         imageBox.style.display = 'none';
     } else {
-        var bedImages = createHTMLElement('div', 'furniture-images');
+        var couchImages = createHTMLElement('div', 'furniture-images');
 
         for (var i = 1; i <= 4; i++) {
-            var bedImage = createHTMLElement('div', 'furniture-image');
+            var couchImage = createHTMLElement('div', 'furniture-image');
             var img = document.createElement('img');
-            img.src = 'images/' + furnitureType + i + '.jpg'; // Change the path to your actual image path
+
+            // Use specific images for each couch option
+            switch (i) {
+                case 1:
+                    img.src = 'couch1.jpg';
+                    break;
+                case 2:
+                    img.src = 'couch2.jpg';
+                    break;
+                case 3:
+                    img.src = 'couch3.jpg';
+                    break;
+                case 4:
+                    img.src = 'couch4.jpg';
+                    break;
+                default:
+                    img.src = 'default.jpg'; // Replace with a default image path
+            }
+
             img.alt = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
 
             // Apply styling to the image
-            img.style.width = '100%'; // Make the width of the image 100% of the container
-            img.style.height = '100%'; // Make the height of the image 100% of the container
+            img.style.width = '100%';
+            img.style.height = '100%';
 
-            bedImage.appendChild(img);
+            couchImage.appendChild(img);
 
-            bedImage.onclick = function () {
+            couchImage.onclick = function () {
                 alert('You clicked on ' + this.firstChild.alt + '. You can add it to your design.');
             };
 
-            bedImages.appendChild(bedImage);
+            couchImages.appendChild(couchImage);
         }
 
         imageBox.innerHTML = '';
-        imageBox.appendChild(bedImages);
+        imageBox.appendChild(couchImages);
+        imageBox.style.display = 'block';
+    }
+}
+
+// Function for showing table images
+function showImages3(furnitureType) {
+    var imageBox = document.getElementById('image-box');
+
+    if (imageBox.style.display === 'block') {
+        imageBox.style.display = 'none';
+    } else {
+        var tableImages = createHTMLElement('div', 'furniture-images');
+
+        for (var i = 1; i <= 4; i++) {
+            var tableImage = createHTMLElement('div', 'furniture-image');
+            var img = document.createElement('img');
+
+            // Use specific images for each table option
+            switch (i) {
+                case 1:
+                    img.src = 'table1.jpeg';
+                    break;
+                case 2:
+                    img.src = 'table2.jpeg';
+                    break;
+                case 3:
+                    img.src = 'table3.jpeg';
+                    break;
+                case 4:
+                    img.src = 'table4.jpeg';
+                    break;
+                default:
+                    img.src = 'default.jpg'; // Replace with a default image path
+            }
+
+            img.alt = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
+
+            // Apply styling to the image
+            img.style.width = '100%';
+            img.style.height = '100%';
+
+            tableImage.appendChild(img);
+
+            tableImage.onclick = function () {
+                alert('You clicked on ' + this.firstChild.alt + '. You can add it to your design.');
+            };
+
+            tableImages.appendChild(tableImage);
+        }
+
+        imageBox.innerHTML = '';
+        imageBox.appendChild(tableImages);
         imageBox.style.display = 'block';
     }
 }
 
 
-        function showImages2(furnitureType) {
-            var imageBox = document.getElementById('image-box');
-
-            if (imageBox.style.display === 'block') {
-
-                        imageBox.style.display = 'none';
-                    }
-                    else {
 
 
-            var couchImages = createHTMLElement('div', 'furniture-images');
-             
-            for (var i = 1; i <= 4; i++) {
-                var couchImage = createHTMLElement('div', 'furniture-image');
-                couchImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
 
-                couchImage.onclick = function() {
-                    alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
-                };
+function showImages4(furnitureType) {
+    var imageBox = document.getElementById('image-box');
 
-                couchImages.appendChild(couchImage);
+    if (imageBox.style.display === 'block') {
+        imageBox.style.display = 'none';
+    } else {
+        imageBox.style.display = 'block';
+
+        var furnitureImages = createHTMLElement('div', 'furniture-images');
+
+        for (var i = 1; i <= 4; i++) {
+            var furnitureImage = createHTMLElement('div', 'furniture-image');
+            furnitureImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
+
+            furnitureImage.onclick = function() {
+                alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
+            };
+
+            // Use specific images for wardrobe
+            var img = document.createElement('img');
+            switch (i) {
+                case 1:
+                    img.src = 'wardrobe1.jpeg';
+                    break;
+                case 2:
+                    img.src = 'wardrobe2.jpeg';
+                    break;
+                case 3:
+                    img.src = 'wardrobe3.png';
+                    break;
+                case 4:
+                    img.src = 'wardrobe4.jpeg';
+                    break;
+                default:
+                    img.src = 'default-wardrobe.jpg'; // Replace with a default image path
             }
 
-            imageBox.innerHTML = '';
-            imageBox.appendChild(couchImages);
-            imageBox.style.display = 'block';
+            // Apply styling to the image
+            img.style.width = '100%';
+            img.style.height = '100%';
+
+            furnitureImage.appendChild(img);
+
+            furnitureImages.appendChild(furnitureImage);
         }
+
+        imageBox.innerHTML = '';
+        imageBox.appendChild(furnitureImages);
+        imageBox.style.display = 'block';
     }
-
-        function showImages3(furnitureType) {
-            var imageBox = document.getElementById('image-box');
-
-            if (imageBox.style.display === 'block') {
-
-                        imageBox.style.display = 'none';
-                    }
-                    else {
+}
 
 
-            var tableImages = createHTMLElement('div', 'furniture-images');
-
-            for (var i = 1; i <= 4; i++) {
-                var tableImage = createHTMLElement('div', 'furniture-image');
-                tableImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
-
-                tableImage.onclick = function() {
-                    alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
-                };
-
-                tableImages.appendChild(tableImage);
-            }
-
-            imageBox.innerHTML = '';
-            imageBox.appendChild(tableImages);
-            imageBox.style.display = 'block';
-        }
-    }
-
-        function showImages4(furnitureType) {
-            var imageBox = document.getElementById('image-box');
-            if (imageBox.style.display === 'block') {
-
-                        imageBox.style.display = 'none';
-                    }
-                    else {
-            imageBox.style.display = 'block';
-
-            var wardrobeImages = createHTMLElement('div', 'furniture-images');
-
-            for (var i = 1; i <= 4; i++) {
-                var wardrobeImage = createHTMLElement('div', 'furniture-image');
-                wardrobeImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
-
-                wardrobeImage.onclick = function() {
-                    alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
-                };
-
-                wardrobeImages.appendChild(wardrobeImage);
-            }
-
-            imageBox.innerHTML = '';
-            imageBox.appendChild(wardrobeImages);
-            imageBox.style.display = 'block';
-        }
-    }
-
-        function hideImages() {
-            var imageBox = document.getElementById('image-box');
-            imageBox.style.display = 'none';
-        }
-    </script>
+ function hideImages() {
+ var imageBox = document.getElementById('image-box');
+ imageBox.style.display = 'none';
+ }
+ </script>
 </body>
 </html>
