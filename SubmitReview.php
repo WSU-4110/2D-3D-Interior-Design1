@@ -1,16 +1,14 @@
-include ("ReviewDAO.php");
+<?php
+    include ("ReviewDAO.php");
+    if(isset($_POST['submit']))
+    {
+        $email=$_POST['email'];
+        $rev=$_POST['rev'];
 
-if(isset($_POST['submit']))
-{
-    $email=$_POST['email'];
-    $rev=$_POST['rev'];
-
-    $myReview = new Review($email,$rev);
-    $sendit = new ReviewDAO();
-
-    $sendit->insert_info($myReview);
-    
-}
+        $myReview = new Review($email,$rev);
+        $sendit = new ReviewDAO();
+        $sendit->insert_info($myReview);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,18 +163,30 @@ if(isset($_POST['submit']))
     </style>
 </head>
 
-<body>
-    <div class="center">
+<body style="background-color:black;">
+    <div class ="center">
         <h1>Submit a Review</h1>
         <form action="" method="post">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" placeholder="Your email" required>
-
-            <label for="rev">Enter your review:</label>
-            <textarea name="rev" id="rev" placeholder="Write your review" required></textarea>
-
-            <input type="submit" name="submit" value="Submit Review">
+            <input type="name" placeholder="Name that will be Visible" name="name" onfocus="this.value"<br>
+            <input type="email" placeholder="Email" name="email" onfocus="this.value=''"><br>
+            <input type="text" placeholder="Enter your review"  name="rev" class="textbox" onfocus="this.value=''" ><br/>
+            <input type="text" placeholder="Enter name to display on review page"  name="name" class="textbox" onfocus="this.value=''" ><br/>
+            <input type="submit" name="submit" />
         </form>
+        <h1>Reviews</h1>
+        <?php
+        $mysqil = mysqli_connect('localhost','root','','test1',3307);
+        $sql = "SELECT * FROM review";
+        $result = $mysqil->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "User " . $row["name"] . " Said: " . $row["paragraph"] . "<br>" . "<br>";
+            }
+        } else {
+            echo "0 results";
+        }
+        ?>
     </div>
 </body>
 
