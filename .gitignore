@@ -3,3 +3,4 @@
 #ignore all files in these folders
 .vscode/
 .venv/
+vendor/*

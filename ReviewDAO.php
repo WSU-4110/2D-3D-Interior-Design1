@@ -4,9 +4,10 @@ class ReviewDAO{
     function insert_info($myReview){
         $email = $myReview->get_email();
         $rev = $myReview->get_rev();
-
+        $name = $myReview->get_name();
+        
         $mysqil = mysqli_connect('localhost','root','','test1',3307);
-        $result=mysqli_query($mysqil,"INSERT into review(email,paragraph)values('$email', '$rev')");
+        $result=mysqli_query($mysqil,"INSERT into review(email,paragraph,name)values('$email', '$rev', '$name')");
         if($result){
             echo "Review Submitted! Thank you for your feedback!";
         }
@@ -15,5 +16,7 @@ class ReviewDAO{
         }
         return $result;
     }
+
+
 }
 ?>

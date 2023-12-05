@@ -1,4 +1,3 @@
-<?php
 include ("ReviewDAO.php");
 
 if(isset($_POST['submit']))
