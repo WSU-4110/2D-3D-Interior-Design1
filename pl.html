@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drawing Capture</title>
+</head>
+
+<body>
+    <button id="captureDrawing">Capture Drawing</button>
+    <button id="erase">Erase</button>
+
+    <input type="color" id="colorPicker" value="#000000"> <!-- Color picker input -->
+
+    <!-- Konva container for drawing -->
+    <div id="container"></div>
+
+    <div id="test-container"></div> <!-- Added for testing snap method -->
+
+    <img id="captured-image" src="" alt="Captured Drawing">
+
+    <script src="https://cdn.jsdelivr.net/npm/konva@7.2.3/konva.min.js"></script>
+
+    <!-- Initialize Konva and global variables -->
+    <script>
+          let buttonClicked = false;
+
+    document.getElementById('colorPicker').addEventListener('change', function () {
+    // Update the lineColor when the color is changed
+    window.lineColor = this.value;
+    });
+        
+    </script>
+
+    <!-- Include the JavaScript files -->
+    <script src="p.js"></script>
+    <script src="colorTest.js"></script>
+</body>
+
+</html>
