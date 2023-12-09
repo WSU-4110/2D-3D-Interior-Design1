@@ -1,0 +1,13 @@
+<project name="2D-3D-INTERIOR-DESIGN1" default="test" basedir=".">
+    <property name="test.dir" value="tests/Unit/ReviewTest.php"/>
+    <property name="phpunit.executable" value="C:/xampp/htdocs/project/2D-3D-Interior-Design1/vendor/bin/phpunit.bat"/>
+
+    <target name="test">
+        <!-- Run your PHP tests using PHPUnit -->
+        <exec executable="${phpunit.executable}">
+            <arg line="--bootstrap test/bootstrap.php"/>
+            <arg line="--configuration test/phpunit.xml"/>
+            <arg line="${test.dir}"/>
+        </exec>
+    </target>
+</project>
