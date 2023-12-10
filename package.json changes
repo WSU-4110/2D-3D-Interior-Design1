@@ -1,0 +1,23 @@
+{
+  "name": "mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test*.js"
+
+  },
+
+
+
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "jsdom": "^22.1.0",
+    "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "assert": "^2.1.0"
+  }
+}
