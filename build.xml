@@ -1,13 +1,20 @@
 <project name="2D-3D-INTERIOR-DESIGN1" default="test" basedir=".">
-    <property name="test.dir" value="tests/Unit/ReviewTest.php"/>
+    <property name="test.dir.php" value="tests/Unit/"/>
+    <property name="test.dir.js" value="tests/JS/"/>
     <property name="phpunit.executable" value="C:/xampp/htdocs/project/2D-3D-Interior-Design1/vendor/bin/phpunit.bat"/>
+    <property name="mocha.executable" value="C:/xampp/htdocs/project/2D-3D-Interior-Design1/node_modules/.bin/_mocha.cmd"/>
 
     <target name="test">
-        <!-- Run your PHP tests using PHPUnit -->
+        <!-- PHPUnit -->
         <exec executable="${phpunit.executable}">
             <arg line="--bootstrap test/bootstrap.php"/>
             <arg line="--configuration test/phpunit.xml"/>
-            <arg line="${test.dir}"/>
+            <arg line="${test.dir.php}"/>
+        </exec>
+
+        <!-- Mocha -->
+        <exec executable="${mocha.executable}">
+            <arg line="--recursive ${test.dir.js}"/>
         </exec>
     </target>
 </project>
