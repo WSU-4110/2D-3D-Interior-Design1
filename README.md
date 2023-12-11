@@ -17,5 +17,5 @@ Having Trouble? If you are having trouble within out web app there is a section 
 - Hannah 
 - Mohima
 - Nazanin
-- Humaira <br>
+- Humaira <br><br>
 For more specific information on who contributed, please view the "Contributors" section at the bottom of the menu on the right hand side of your screen. If it is not there, it may be at the bottom of you page. 
