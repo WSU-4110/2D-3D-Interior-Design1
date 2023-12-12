@@ -16,20 +16,20 @@ We are a team of college students who created this project because we wanted int
 There are many ways to make a 2D design layout, but why use ours? Ours is set apart by allow the user to convert their design to a 3D model. This is a unique ability and is extremely helpful for translating ideas on paper, into something applicable to the real world. Our web application is very user friendly, making it suitable for people of technological abilities. Our app also has a built in function to save your 2D drawing directly to your computer, making it easy to print or view later. The freedom given to you by our drawing function also allows you to account for any unique room or furniture you may have, that is not available as a preset option in other applicatons.
 
 ## Who Contributed?
-Lavender Calhoun, Github: Lavender-C <br>
+### Lavender Calhoun, Github: Lavender-C <br>
 Contributions–<br>
 Base drawing grid with snap, undo/redo, clear, save image, length and angle tracking functionality<br>
 2D-3D transition<br>
 Docker and Nginx management<br><br>
 
-Nazanin Mahmoudi, Github: Naz1380<br>
+### Nazanin Mahmoudi, Github: Naz1380<br>
 Contributions–<br>
 homepage<br>
 Added draggable 2D pictures on the grid main page<br>
 Worked on adding tabs and fixed formatting of the main page<br>
 Modified the grid and added new functionalities: erase button, different color options, user desired customized coloring, capture images, length and angle measurement<br><br>
 
-Hannah Hoover, Github: Hannah-Hoover<br>
+### Hannah Hoover, Github: Hannah-Hoover<br>
 Contributions-<br>
 Login page (Css and user interface)<br>
 Login Database<br>
@@ -37,7 +37,7 @@ Review Database<br>
 Contributed to review page (CSS and user interface) <br>
 Bug fixes<br><br>
 
-Mohima Kibria, Github: MohimaKibria<br>
+### Mohima Kibria, Github: MohimaKibria<br>
 Contributions-<br>
 Worked on 2D Grid Page Tab functionality <br>
 Dragging image functionality <br>
@@ -47,7 +47,7 @@ User Interface Design/Styling for Review Page <br>
 User Interface Design/Styling for Contact Page <br>
 Bug fixes<br><br>
 
-Humaira Tasnim, GitHub: humaira1526<br>
+### Humaira Tasnim, GitHub: humaira1526<br>
 Contributions-<br>
 Created and styled the Contact Us HTML page and About Us HTML page.<br>
 Contributed to HomePage styling. <br>
