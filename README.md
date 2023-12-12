@@ -19,7 +19,7 @@ There are many ways to make a 2D design layout, but why use ours? Ours is set ap
 ### Lavender Calhoun, Github: Lavender-C <br>
 Contributions–<br>
 Base drawing grid with snap, undo/redo, clear, save image, length and angle tracking functionality<br>
-2D-3D transition<br> --*2D to 3D Functionality and Script from https://github.com/grebtsew/FloorplanToBlender3d*
+2D-3D transition --*2D to 3D Functionality and Script from https://github.com/grebtsew/FloorplanToBlender3d*<br>
 Docker and Nginx management<br><br>
 
 ### Nazanin Mahmoudi, Github: Naz1380<br>
