@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Drawing Capture</title>
+    <script src="https://cdn.rawgit.com/konvajs/konva/2.6.0/konva.min.js"></script>
+</head>
+<body>
+    <button id="captureDrawing">Capture Drawing</button>
+    <button id="erase">Erase</button>
+    <button id="startDistanceMeasurement">Start Distance Measurement</button>
+    <button id="startAngleMeasurement">Start Angle Measurement</button>
+    <input type="color" id="colorPicker" value="#000000"> <!-- Color picker input -->
+
+    <!-- Konva container for drawing -->
+    <div id="container"></div>
+
+    <img id="captured-image" src="" alt="Captured Drawing">
+    
+    <script src="cap.js"></script>
+</body>
+</html>

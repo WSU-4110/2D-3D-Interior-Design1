@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Display Furniture on Click</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 10px 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 10px;
+            border-left: 5px solid transparent;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+            border-left: 5px solid #ff9900;
+        }
+
+        .sub-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%; /* Position to the right of the parent item */
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .arrow {
+            transform: rotate(90deg); /* Rotate the arrow 90 degrees for right-pointing */
+            transition: transform 0.3s; /* Add a smooth transition */
+        }
+
+        .sub-menu.active {
+            display: block;
+        }
+
+        .sub-menu.active .arrow {
+            transform: rotate(0); /* Reset rotation when active */
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .image-box {
+            background-color: #fff;
+            padding: 20px;
+            display: none;
+        }
+
+        .furniture-images {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .furniture-image {
+            width: 150px;
+            height: 150px;
+            background-color: #ccc;
+            margin: 10px;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
+
+        .furniture-image:hover {
+            border: 2px solid #ff9900;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Design A Room</a></li>
+            <li>
+                <a href="#" onclick="toggleSubMenu()">Furniture <span class="arrow">&#9654;</span></a>
+                <ul class="sub-menu" id="sub-menu">
+                    <li><a href="#" onclick="showImages('bed')">Bed</a></li>
+                    <li><a href="#" onclick="showImages2('couch')">Couch</a></li>
+                    <li><a href="#" onclick="showImages3('table')">Table</a></li>
+                    <li><a href="#" onclick="showImages4('wardrobe')">Wardrobe</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Paint</a></li>
+            <li class="current-item"><a href="#">Flooring</a></li>
+            <li><a href="#">Site Help</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="image-box" class="image-box">
+        
+        </div>
+    </div>
+    <script>
+        // Factory function for creating elements
+        function createHTMLElement(tagName, className) {
+            var element = document.createElement(tagName);
+            if (className) {
+                element.classList.add(className);
+            }
+            return element;
+        }
+
+        // Define the functions
+        function toggleSubMenu() {
+            var submenu = document.getElementById('sub-menu');
+            submenu.classList.toggle('active');
+        }
+
+
+            function showImages(furnitureType) {
+                    var imageBox = document.getElementById('image-box');
+                
+                    if (imageBox.style.display === 'block') {
+                        
+                        imageBox.style.display = 'none';
+                    } 
+                    else {
+
+
+            var bedImages = createHTMLElement('div', 'furniture-images');
+
+            for (var i = 1; i <= 4; i++) {
+                var bedImage = createHTMLElement('div', 'furniture-image');
+                bedImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
+
+                bedImage.onclick = function() {
+                    alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
+                };
+
+                bedImages.appendChild(bedImage);
+            }
+
+            imageBox.innerHTML = ''; 
+            imageBox.appendChild(bedImages);
+            imageBox.style.display = 'block'; // Display the images
+        }
+    }
+
+
+
+
+        function showImages2(furnitureType) {
+            var imageBox = document.getElementById('image-box');
+            
+            if (imageBox.style.display === 'block') {
+                        
+                        imageBox.style.display = 'none';
+                    } 
+                    else {
+            
+
+            var couchImages = createHTMLElement('div', 'furniture-images'); 
+
+            for (var i = 1; i <= 4; i++) {
+                var couchImage = createHTMLElement('div', 'furniture-image'); 
+                couchImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
+                
+                couchImage.onclick = function() {
+                    alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
+                };
+
+                couchImages.appendChild(couchImage);
+            }
+
+            imageBox.innerHTML = ''; 
+            imageBox.appendChild(couchImages);
+            imageBox.style.display = 'block'; // Display the images
+        }
+    }
+
+        function showImages3(furnitureType) {
+            var imageBox = document.getElementById('image-box');
+
+            if (imageBox.style.display === 'block') {
+                        
+                        imageBox.style.display = 'none';
+                    } 
+                    else {
+            
+
+            var tableImages = createHTMLElement('div', 'furniture-images'); 
+
+            for (var i = 1; i <= 4; i++) {
+                var tableImage = createHTMLElement('div', 'furniture-image'); 
+                tableImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
+
+                tableImage.onclick = function() {
+                    alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
+                };
+
+                tableImages.appendChild(tableImage);
+            }
+
+            imageBox.innerHTML = ''; 
+            imageBox.appendChild(tableImages);
+            imageBox.style.display = 'block'; 
+        }
+    }
+
+        function showImages4(furnitureType) {
+            var imageBox = document.getElementById('image-box');
+            if (imageBox.style.display === 'block') {
+                        
+                        imageBox.style.display = 'none';
+                    } 
+                    else {
+            imageBox.style.display = 'block';
+
+            var wardrobeImages = createHTMLElement('div', 'furniture-images'); 
+
+            for (var i = 1; i <= 4; i++) {
+                var wardrobeImage = createHTMLElement('div', 'furniture-image'); 
+                wardrobeImage.innerHTML = furnitureType.charAt(0).toUpperCase() + furnitureType.slice(1) + ' ' + i;
+
+                wardrobeImage.onclick = function() {
+                    alert('You clicked on ' + this.innerHTML + '. You can add it to your design.');
+                };
+
+                wardrobeImages.appendChild(wardrobeImage);
+            }
+
+            imageBox.innerHTML = ''; 
+            imageBox.appendChild(wardrobeImages);
+            imageBox.style.display = 'block'; 
+        }
+    }
+
+        function hideImages() {
+            var imageBox = document.getElementById('image-box');
+            imageBox.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

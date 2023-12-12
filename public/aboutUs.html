@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        
+
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/back.jpeg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+.container {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/back.jpeg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100%; /* Make the logo fill the circular container */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+}
+
+.menu-icon {
+    width: 30px;
+    cursor: pointer;
+    margin-left: 1200px;
+}
+
+.row {
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+
+.col {
+    flex-basis: 50%;
+}
+
+h1 {
+    color: #fff;
+    font-size: 70px;
+    margin-left: -18%;
+    white-space: nowrap;
+}
+
+p {
+    color: #fff;
+    font-size: 20px;
+    line-height: 50px;
+    margin-left: -18%;
+}
+
+
+
+
+.oval-image {
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 200px;
+}
+
+.horizontal-image {
+    width: 400px;
+    height: auto;
+}
+.picture-container {
+    margin-top: 20px; /* Adjust the margin value to move the picture down */
+}
+/* Keyframes for the zoom effect */
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1); /* Start at the normal size */
+    }
+    100% {
+        transform: scale(1.2); /* End at a slightly larger size (adjust as needed) */
+    }
+}
+
+/* Apply the zoom effect to the logo */
+.logo.zoom-effect {
+    animation: zoomEffect 3s infinite alternate; /* Apply the 'zoomEffect' animation with alternate repeat mode */
+}
+
+.zoom-effect {
+    animation: zoomEffect 4s infinite alternate;
+}
+
+/* Keyframes for the typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Keyframes for the color change effect */
+@keyframes colorChange {
+    0% {
+        color: #8B4513; /* Start with a brown color (adjust to your desired shade) */
+    }
+    25% {
+        color: #A0522D; /* Transition to another brown shade */
+    }
+    50% {
+        color: #D2691E; /* Transition to a different brown shade */
+    }
+    75% {
+        color: #CD853F; /* Transition to another brown shade */
+    }
+    100% {
+        color: #8B4513; /* Return to the initial brown shade */
+    }
+}
+
+/* Apply the typing effect to the text within a class "typing-text" */
+.typing-text {
+    font-family: 'Your Script Font', cursive;
+    overflow: hidden; /* Hide the overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: typing 4s steps(40, end) 1s 1 normal both; /* 1 iteration */
+    color: #FF8C00; /* Start with a brown color (adjust to your desired shade) */
+}
+
+h1.typing-text {
+    margin-left: -18%;
+    font-size: 70px;
+}
+
+/* Apply the color change effect to the text within a class "color-change-effect" */
+.typing-text.color-change-effect {
+    animation: colorChange 8s infinite alternate; /* Apply the color-changing animation */
+}
+
+h1, .typing-text {
+    font-family: 'Your Serif. Font';
+}
+nav ul li a::after {
+    content: ' →'; /* Add a right arrow */
+    margin-left: 5px; /* Adjust spacing between text and arrow */
+}
+nav ul li a {
+    font-family: 'Your Cool Font', sans-serif;
+    text-transform: uppercase;
+    padding: 10px 20px; /* Adjust the padding to your preference */
+    border: 2px solid #FFA500; /* Add a dark orange border around the links */
+    color: #fff; /* Text color */
+    background-color: transparent; /* Background color for the links */
+    border-radius: 5px; /* Add rounded corners to the border */
+    transition: border-color 0.3s; /* Add a transition for the border color */
+}
+.logo-container {
+    width: 204px; /* Adjust the dimensions as needed to match your logo */
+    height: 204px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow content */
+    border: 2px solid #FFA500; /* Orange border */
+    border-radius: 50%; /* Create a circular container */
+}
+nav ul li a:hover {
+    border-color: #333; /* Change the border color on hover */
+    color: #FFA500; /* Change the text color on hover */
+}
+
+        header {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0,75)), url(../background.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+
+
+        h1 {
+            color: #fff;
+            font-size: 70px;
+            position: relative;
+            left: 50px;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        p {
+            color: #fff;
+            font-size: 20px;
+            line-height: 50px;
+            position: relative;
+            left: 140px;
+        }
+
+        label {
+            
+            width: 150px;
+            color: #000;
+            font-size: 20px;
+            padding: 12px 10px;
+            background-color: #fff;
+            border: 2px solid #fff;
+            border-radius: 10000px;
+            outline: none;
+            margin-top: 100px;
+            text-align: center;
+            position: relative;
+            left: 330px;
+            cursor: pointer;
+        }
+
+        button:hover span{
+            width: 100%;
+        }
+        button:hover{
+            border: none;
+        }
+
+        #ch{
+            display: none;
+        }
+
+            #ch:checked ~ .content {
+                display: block;
+                
+            }
+
+            #ch:checked ~ label{
+                display: none;
+            }
+
+            .content {
+            display: none;
+            color: white;
+            
+            
+        }
+
+        .WhoWeAre{
+            float: right;
+            width: 45%
+        }
+
+        .HPic{
+            float: left;
+            width: 50%;
+            margin-right: 40px;
+        }
+        
+        
+    </style>
+
+
+
+
+
+    <title>Website Design - Easy Tutorials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+
+    <div class="container">
+
+        <div class="navbar">
+            <!-- Logo section -->
+            <div class="logo-container">
+                <img src="logo.jpeg" class="logo" alt="Your Logo">
+            </div>
+
+            <!-- Navigation menu -->
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input id="ch" type="checkbox">
+                <h1>Design Your House</h1>
+                <p class="typing-text" style="font-family: 'Arial', sans-serif;">
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On our platform, we believe that the spaces we inhabit have a profound impact on our lives.<br />
+                    Our mission is to transform houses into homes, offices into productive environments, and dreams into reality.
+                    <br /><br />
+                </p>
+
+
+
+
+                <div class="content">
+                    
+                    <p><tag><strong>        Who We Are</strong><br />  </tag></p>
+                    <img class="WhoWeAre" src = "WhoWeAre.jpeg">
+                    <p>
+                           
+
+                        <span style="color: #FF8C00">We are a passionate team of interior designers,<br> architects, and creative minds who share a
+                        common <br>vision:to create exceptional living and working spaces.<br> With a deep love for design,
+                        aesthetics, and functionality,<br> we have dedicated ourselves to crafting interiors<br> that tell your unique story.
+                    </span></p><br>
+                    
+                    
+                    <img class="HPic" src = "3D_Pic.jpg">
+                    <p>
+                        <strong>Why Choose Us?</strong><br>
+                        <span style="color: #FF8C00">
+
+                        <li><br><strong>Personalized Approach: </strong><br>We understand that every client is unique. That's why we take the time to get to know you,<br>
+                             your preferences, and your aspirations to tailor our designs to your specific needs.</li>
+
+                        <li><br><strong>Attention to Detail:</strong><br> It's the little things that matter most. We pay meticulous attention to every detail, from the<br>
+                             choice of materials to the placement of furniture, ensuring a cohesive and harmonious design.</li>
+
+                         <li><br><strong>Affordable Excellence:</strong><br> We believe that top-notch interior design should be accessible to all. Our commitment to affordability<br>
+                             means you can enjoy high-quality design without breaking the bank.</li>
+
+                         <li><br><strong>Client-Centric Approach:</strong><br> Your satisfaction is our priority. We work collaboratively with you, involving you in the design process,<br>
+                             and making sure that your vision is realized.</li></span>
+                    
+                    </p><br>
+                    <p>
+                        <br><strong>Get Started</strong><br>
+
+                            Ready to bring your interior design dreams to life?  <span style="color: #FF8C00">Contact us</span> today, and let's embark on a journey to create <br>
+                            spaces that inspire, comfort, and define who you are.<br>
+
+                            Thank you for considering us as your interior design partner. We look forward to helping
+                             you create the<br> perfect backdrop for your life's story.<br><br>
+                    </p>
+
+                    <label for="ch">Read Less</label><br><br><br>
+                </div>
+                <label for="ch">Read More</label>
+            </div>
+           
+            
+        </div>
+    </div>
+</header>
+</body>
+</html>
