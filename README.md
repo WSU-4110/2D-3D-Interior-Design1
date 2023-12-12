@@ -31,30 +31,30 @@ Modified the grid and added new functionalities: erase button, different color o
 
 ### Hannah Hoover, Github: Hannah-Hoover<br>
 Contributions-<br>
-Login page (Css and user interface)<br>
-Login Database<br>
-Review Database<br>
-Contributed to review page (CSS and user interface) <br>
-Bug fixes<br><br>
+- Login page (Css and user interface)<br>
+- Login Database<br>
+- Review Database<br>
+- Contributed to review page (CSS and user interface) <br>
+- Bug fixes<br><br>
 
 ### Mohima Kibria, Github: MohimaKibria<br>
 Contributions-<br>
-Worked on 2D Grid Page Tab functionality <br>
-Dragging image functionality <br>
-2D Grid Page Design <br>
-2D Grid Page Door Feature/Quarter Circle<br>
-User Interface Design/Styling for Review Page <br>
-User Interface Design/Styling for Contact Page <br>
-Bug fixes<br><br>
+- Worked on 2D Grid Page Tab functionality <br>
+- Dragging image functionality <br>
+- 2D Grid Page Design <br>
+- 2D Grid Page Door Feature/Quarter Circle<br>
+- User Interface Design/Styling for Review Page <br>
+- User Interface Design/Styling for Contact Page <br>
+- Bug fixes<br><br>
 
 ### Humaira Tasnim, GitHub: humaira1526<br>
 Contributions-<br>
-Created and styled the Contact Us HTML page and About Us HTML page.<br>
-Contributed to HomePage styling. <br>
-Helped with bug fixing.<br>
-Researched on server options, and started working with node.js with the team.<br>
-Worked on 2D Grid page functionalities<br>
-Combined all different functionalities gotten from Nazanin and Lavender into the 2D grid page as one.<br>
-Integrated the 2D grid-page and the 2D grid Tab HTML Page created by Mohima together and made sure they worked together as a whole.<br>
-Also added new functionalities to the 2D grid, adding draggable squares, and circles, and saving pictures with the grid into the laptop. <br><br>
+- Created and styled the Contact Us HTML page and About Us HTML page.<br>
+- Contributed to HomePage styling. <br>
+- Helped with bug fixing.<br>
+- Researched on server options, and started working with node.js with the team.<br>
+- Worked on 2D Grid page functionalities<br>
+- Combined all different functionalities gotten from Nazanin and Lavender into the 2D grid page as one.<br>
+- Integrated the 2D grid-page and the 2D grid Tab HTML Page created by Mohima together and made sure they worked together as a whole.<br>
+- Also added new functionalities to the 2D grid, adding draggable squares, and circles, and saving pictures with the grid into the laptop. <br><br>
 
